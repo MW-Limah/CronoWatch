@@ -63,4 +63,4 @@ let timerInterval;
     resetButton.addEventListener('click', resetTimer);
 
     // Start the timer automatically when the page loads
-    window.addEventListener('load', startTimer);
+    window.addEventListener('load');
