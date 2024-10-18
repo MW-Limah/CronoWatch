@@ -57,10 +57,40 @@ let timerInterval;
         millisecondsDisplay.textContent = milliseconds.toString().padStart(3, '0');
     }
 
-    startButton.addEventListener('click', startTimer);
-    pauseButton.addEventListener('click', pauseTimer);
-    resumeButton.addEventListener('click', resumeTimer);
-    resetButton.addEventListener('click', resetTimer);
+    function paraTemp() {
+        const rot = document.querySelector("link[href='./css/keyframesec.css']");
+        if (rot) {
+            rot.disabled = true;
+        }
+    }
+    
+    function initTemp() {
+        const rot = document.querySelector("link[href='./css/keyframesec.css']");
+        if (rot) {
+            rot.disabled = false;
+        }
+    }
+    
+
+    startButton.addEventListener('click', () => {
+        startTimer();
+        initTemp();
+    });
+    
+    pauseButton.addEventListener('click', () => {
+        pauseTimer();
+        paraTemp();
+    });
+    
+    resumeButton.addEventListener('click', () => {
+        initTemp();
+        resumeTimer();
+    });
+    
+    resetButton.addEventListener('click', () => {
+        paraTemp();
+        resetTimer();
+    });
 
     // Start the timer automatically when the page loads
-    window.addEventListener('load');
+    window.addEventListener('load', paraTemp);

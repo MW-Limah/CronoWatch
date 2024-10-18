@@ -207,8 +207,3 @@
     box-shadow: 1px 0 4px #00000026;
 }
 
-@keyframes sec{
-    to {
-        transform: rotate(360deg);
-    }
-}
